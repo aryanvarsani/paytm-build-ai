@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+/* ===== Kyun? + Paytm Converged Design System ===== */
+@theme {
+  --color-paytm-navy: #233266;
+  --color-paytm-cyan: #00BAF2;
+  --color-kyun-purple: #6C3CE9;
+  --color-kyun-cyan: #00BAF2;
+  --color-bg: #F6F8FB;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #172033;
+  --color-text-secondary: #667085;
+  --color-text-muted: #98A2B3;
+  --color-border: #E6EAF0;
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+
+  --font-family-inter: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Base & Typography ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  font-family: var(--font-family-inter);
+  background: #EAEFF5;
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== App Shell — mobile-centered ===== */
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--color-bg);
+  position: relative;
+  box-shadow: 0 0 60px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.page-content {
+  flex: 1;
+  padding-bottom: 80px;
+}
+
+/* ===== Kyun? Visual Language ===== */
+.kyun-gradient-bg {
+  background: linear-gradient(135deg, var(--color-kyun-purple) 0%, var(--color-kyun-cyan) 100%);
+}
+
+.kyun-gradient-text {
+  background: linear-gradient(135deg, var(--color-kyun-purple) 0%, var(--color-kyun-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== Cards & Surfaces ===== */
+/* Radius variables */
+:root {
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 18px;
+  
+  --shadow-card: 0 2px 8px rgba(35, 50, 102, 0.08);
+  --shadow-elevated: 0 8px 24px rgba(35, 50, 102, 0.12);
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+/* ===== Typography Scale Overrides ===== */
+.text-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.text-section {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.text-card-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.text-body {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+.text-meta {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.text-finance {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background: var(--color-paytm-navy);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-kyun {
+  background: linear-gradient(135deg, var(--color-kyun-purple) 0%, var(--color-kyun-cyan) 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.btn-kyun:active {
+  transform: translateY(1px);
+}
+
+/* ===== Impact badges ===== */
+.impact-high {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--color-error);
+}
+
+.impact-medium {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+}
+
+.impact-low {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--color-success);
+}
+
+/* ===== Bottom Sheet ===== */
+.sheet-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+.sheet-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  max-width: 430px;
+  margin: 0 auto;
+  background: white;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 20px;
+  z-index: 101;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+/* ===== Slider ===== */
+.kyun-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-border);
+  outline: none;
+  transition: background 0.2s;
+}
+
+.kyun-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-kyun-purple);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(108,60,233,0.3);
+  transition: transform 0.15s ease;
+}
+
+.kyun-slider::-webkit-slider-thumb:active {
+  transform: scale(1.15);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-in {
+  animation: slideInRight 0.4s ease forwards;
+}
+
+.animate-fade {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* ===== Progress bar ===== */
+.progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--color-kyun-purple), var(--color-kyun-cyan));
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Scrollbar ===== */
+.page-content::-webkit-scrollbar,
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== Chat bubbles ===== */
+.chat-bubble-user {
+  background: var(--color-paytm-navy);
+  color: white;
+  border-radius: var(--radius-md) var(--radius-md) 4px var(--radius-md);
+  padding: 12px 16px;
+  max-width: 80%;
+  margin-left: auto;
+}
+
+.chat-bubble-ai {
+  background: var(--color-border); /* slight grey */
+  background: #F3F4F6;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md) var(--radius-md) var(--radius-md) 4px;
+  padding: 12px 16px;
+  max-width: 85%;
+}
+
+/* ===== Disclaimer ===== */
+.disclaimer {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding: 12px;
+  background: #F9FAFB;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
